@@ -10,7 +10,7 @@ export default function NameInputPage({ name, setName, onSubmit }) {
     <Layout
       className="input-layout"
       style={{
-        backgroundImage: 'url("/images/background.png")',
+        backgroundImage: `url("${process.env.PUBLIC_URL}/images/background.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
