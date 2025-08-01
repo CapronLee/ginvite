@@ -2,7 +2,7 @@ export function generateInvitation(name) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   const image = new Image();
-  image.src = "/images/GraduationInvitation.png";
+  image.src = `${process.env.PUBLIC_URL}/images/GraduationInvitation.png`;
 
   image.onload = () => {
     canvas.width = image.width;
@@ -30,7 +30,7 @@ export function generateInvitation(name) {
       textWidth = ctx.measureText(name).width;
     }
 
-    ctx.fillText(name, canvas.width / 2, 200); // fix: đặt vị trí tên ở dòng hợp lý hơn
+    ctx.fillText(name, canvas.width / 2, 200);
 
     // Tải ảnh
     const link = document.createElement("a");
@@ -46,13 +46,12 @@ export function generateInvitation(name) {
   };
 }
 
-// ✅ Hàm mới dùng cho animation (trả về ảnh dạng URL)
 export function generateInvitationImageOnly(name) {
   return new Promise((resolve) => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const image = new Image();
-    image.src = "/images/GraduationInvitation.png";
+    image.src = `${process.env.PUBLIC_URL}/images/GraduationInvitation.png`;
 
     image.onload = () => {
       canvas.width = image.width;
@@ -80,7 +79,7 @@ export function generateInvitationImageOnly(name) {
         textWidth = ctx.measureText(name).width;
       }
 
-      ctx.fillText(name, canvas.width / 2, 200); // dùng đúng y như ảnh tải
+      ctx.fillText(name, canvas.width / 2, 200);
 
       // Trả về ảnh (dùng trong animation)
       resolve(canvas.toDataURL("image/png"));
