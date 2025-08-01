@@ -131,9 +131,10 @@ export default function GraduationContent({ name }) {
             variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
           >
             <Paragraph style={{ textAlign: "left" }}>
-              <b>⏰ Thời gian:</b> 9:00 sáng, Chủ Nhật, 15/09/2025
+              <b>⏰ Thời gian:</b> 15:30, Chủ Nhật, 10/08/2025
               <br />
-              <b>📍 Địa điểm:</b> Hội trường A, Trường Đại học XYZ
+              <b>📍 Địa điểm:</b> Trung tâm Hội nghị Quốc gia (NCC), Phạm Hùng,
+              Nam Từ Liêm, Hà Nội
             </Paragraph>
           </motion.div>
 
