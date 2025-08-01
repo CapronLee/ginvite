@@ -1,0 +1,38 @@
+/* components/InvitationCard.css */
+
+.invitation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.invitation-image {
+  width: 300px;
+  max-width: 80%;
+  height: auto;
+  z-index: 2;
+}
+
+.invitation-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  color: #545454;
+  margin-top: 20px;
+  text-align: center;
+  z-index: 3;
+}
+
+.invitation-image-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
