@@ -149,8 +149,7 @@ export default function GraduationContent({ name }) {
                     cover={
                       <div
                         className="image-container"
-                        onMouseEnter={() => setHovered(img)}
-                        onMouseLeave={() => setHovered(null)}
+                        onClick={() => setHovered(img)} // click mở overlay
                       >
                         <img
                           alt={`Ảnh ${index + 1}`}
@@ -168,7 +167,15 @@ export default function GraduationContent({ name }) {
       </Content>
 
       {hovered && (
-        <div className="image-preview-overlay">
+        <div
+          className="image-preview-overlay"
+          onClick={(e) => {
+            // Nếu click là vùng ngoài ảnh
+            if (e.target.classList.contains("image-preview-overlay")) {
+              setHovered(null);
+            }
+          }}
+        >
           <img
             src={`/images/${hovered}`}
             alt="Preview"
