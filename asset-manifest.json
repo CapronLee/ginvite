@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ginvite/static/css/main.edb7894e.css",
-    "main.js": "/ginvite/static/js/main.c41b8d23.js",
+    "main.js": "/ginvite/static/js/main.785d463a.js",
     "static/js/453.f1e6c5fb.chunk.js": "/ginvite/static/js/453.f1e6c5fb.chunk.js",
     "index.html": "/ginvite/index.html",
     "main.edb7894e.css.map": "/ginvite/static/css/main.edb7894e.css.map",
-    "main.c41b8d23.js.map": "/ginvite/static/js/main.c41b8d23.js.map",
+    "main.785d463a.js.map": "/ginvite/static/js/main.785d463a.js.map",
     "453.f1e6c5fb.chunk.js.map": "/ginvite/static/js/453.f1e6c5fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.edb7894e.css",
-    "static/js/main.c41b8d23.js"
+    "static/js/main.785d463a.js"
   ]
 }
