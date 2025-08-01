@@ -9,7 +9,56 @@ import {
 const { Title, Paragraph } = Typography;
 const { Header, Content, Footer } = Layout;
 
-const images = ["me1.jpg", "me2.jpg", "me3.jpg"];
+const imageGroups = {
+  2021: [
+    "me1.jpg",
+    "2021me1.jpg",
+    "2021me2.jpg",
+    "2021me3.jpg",
+    "2021me4.jpg",
+    "2021me5.jpg",
+    "2021me6.jpg",
+    "2021me7.jpg",
+  ],
+  2022: [
+    "2022me1.jpg",
+    "2022me2.jpg",
+    "2022me3.jpg",
+    "2022me5.jpg",
+    "2022me6.jpg",
+  ],
+  2023: [
+    "2023me2.jpg",
+    "2023me3.jpg",
+    "2023me4.jpg",
+    "2023me5.jpg",
+    "2023me6.jpg",
+    "2023me7.jpg",
+    "2023me8.jpg",
+  ],
+  2024: [
+    "2024me2.jpg",
+    "2024me3.jpg",
+    "2024me4.jpg",
+    "2024mea.jpg",
+    "2024meb.jpg",
+  ],
+  2025: [
+    "me2.jpg",
+    "me3.jpg",
+    "2025me1.jpg",
+    "2025me2.jpg",
+    "2025me4.jpg",
+    "2025mea.png",
+    "2025meb.jpg",
+    "2025mec.JPG",
+    "2025med.jpg",
+    "2025mee.jpg",
+    "2025mez.jpg",
+    "2025mex.jpg",
+    "2025mev.jpg",
+  ],
+};
 
 export default function GraduationContent({ name }) {
   const [hovered, setHovered] = useState(null);
@@ -136,33 +185,41 @@ export default function GraduationContent({ name }) {
             </Button>
           </motion.div>
 
-          <Title level={4}>📸 Một vài khoảnh khắc</Title>
-          <Row gutter={[16, 16]}>
-            {images.map((img, index) => (
-              <Col xs={24} sm={12} md={8} key={index}>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Card
-                    hoverable
-                    cover={
-                      <div
-                        className="image-container"
-                        onClick={() => setHovered(img)} // click mở overlay
-                      >
-                        <img
-                          alt={`Ảnh ${index + 1}`}
-                          src={`/images/${img}`}
-                          className="fixed-image"
-                        />
-                      </div>
-                    }
-                  />
-                </motion.div>
-              </Col>
-            ))}
-          </Row>
+          <Title level={4}>📸 Qtrumlee qua từng năm</Title>
+
+          {Object.entries(imageGroups).map(([year, imgs]) => (
+            <div key={year} style={{ marginBottom: 32 }}>
+              <Title level={5} style={{ marginTop: 16 }}>
+                {year}
+              </Title>
+              <Row gutter={[16, 16]}>
+                {imgs.map((img, index) => (
+                  <Col xs={24} sm={12} md={8} key={index}>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <Card
+                        hoverable
+                        cover={
+                          <div
+                            className="image-container"
+                            onClick={() => setHovered(img)}
+                          >
+                            <img
+                              alt={`Ảnh ${year} - ${index + 1}`}
+                              src={`/images/${img}`}
+                              className="fixed-image"
+                            />
+                          </div>
+                        }
+                      />
+                    </motion.div>
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          ))}
         </motion.div>
       </Content>
 
