@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #fafafa;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ----------------- Layout chung ------------------- */
+.input-layout {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.overlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
+.centered-content {
+  position: relative;
+  z-index: 2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.main-layout {
+  min-height: 100vh;
+  background-color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header {
+  background-color: #001529;
+  padding: 12px 20px;
+  text-align: center;
+}
+
+/* ----------------- Khung nhập tên ------------------- */
+.form-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 32px 24px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* ----------------- Ảnh gallery ------------------- */
+.image-container {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.fixed-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.full-image-on-hover {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hiện ảnh đầy đủ khi hover */
+.image-container:hover .full-image-on-hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.05);
+}
+
+/* Ẩn ảnh crop khi hover nếu muốn */
+.image-container:hover .fixed-image {
+  opacity: 0;
+}
+.image-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+.image-preview-full {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ----------------- Mobile tweaks ------------------- */
+@media (max-width: 576px) {
+  .ant-typography {
+    font-size: 16px !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  .ant-card {
+    margin: 0 auto;
   }
 }
