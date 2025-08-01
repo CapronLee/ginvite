@@ -209,7 +209,7 @@ export default function GraduationContent({ name }) {
                           >
                             <img
                               alt={`Ảnh ${year} - ${index + 1}`}
-                              src={`/images/${img}`}
+                              src={`${process.env.PUBLIC_URL}/images/${img}`}
                               className="fixed-image"
                             />
                           </div>
@@ -235,7 +235,7 @@ export default function GraduationContent({ name }) {
           }}
         >
           <img
-            src={`/images/${hovered}`}
+            src={`${process.env.PUBLIC_URL}/images/${hovered}`}
             alt="Preview"
             className="image-preview-full"
           />

@@ -25,7 +25,7 @@ export default function BackgroundMusic() {
   return (
     <audio
       ref={audioRef}
-      src="/audio/background.mp3"
+      src={`${process.env.PUBLIC_URL}/audio/background.mp3`}
       loop
       preload="auto"
       style={{ display: "none" }}
